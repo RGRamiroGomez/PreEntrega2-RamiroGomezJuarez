@@ -48,12 +48,6 @@ function prevStep(){
     act.classList.remove("active")
     pre.classList.add("active")
 }
-function submit(){
-
-}
-nextStep()
-nextStep()
-prevStep()
 
 for(sig of next){
 sig.addEventListener("click",nextStep)
@@ -61,5 +55,8 @@ sig.addEventListener("click",nextStep)
 for(ant of prev){
 ant.addEventListener("click",prevStep)
 }
-submmit.addEventListener("click",submit)
-
+let dtar=getElementById("destinos")
+dtar.addEventListener("onblur",)
+function dataTarifa(dtar.value){
+        tarifas.forEach()
+}
