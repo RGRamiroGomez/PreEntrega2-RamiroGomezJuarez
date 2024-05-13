@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="envio">
+        <fieldset id="destino" class="active">
+            <legend>A donde quiere enviar</legend>
+            <select name="destinos" id="destinos">
+                <option value="none"></option>
+                <option value="5500">Mendoza</option>
+                <option value="1100">Buenos Aires</option>
+                <option value="2200">San Luis</option>
+                <option value="3300">Cordoba</option>
+                <option value="4400">Neuquén</option>
+            </select>
+            <button type="button" class="next">Seguir</button>
+        </fieldset>
+        <fieldset id="bulto" >
+            <legend>Datos del bulto</legend>
+            <p>El precio del envio se determinara calculando el volumen y comparandolo con el peso del bulto convirtiendo el volumen y el peso a kg aforados</p>
+            <label for="largo">Largo</label>
+            <input type="number" id="largo">
+            <label for="ancho">Ancho</label>
+            <input type="number" id="ancho">
+            <label for="alto">Altura</label>
+            <input type="number" id="alto">
+            <label for="peso">Peso</label>
+            <input type="number" id="peso">
+            <button type="button" class="prev">Voler</button>
+            <button type="button" class="next">Seguir</button>
+        </fieldset>
+        <fieldset id="destinatario">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido">
+            <label for="tel">Telefono</label>
+            <input type="number" id="tel">
+            <label for="email">Email</label>
+            <input type="email" id="email">
+            <button type="button" class="prev">Voler</button>
+            <button type="button" class="next">Seguir</button>
+        </fieldset>
+        <fieldset id="entrega">
+            <label for="entrega">Envio a domicilio?</label>
+            <input type="checkbox" id="entrega">
+            <button type="button" class="prev">Voler</button>
+            <button type="reset" id="submit">Enviar</button>
+        </fieldset>
+        
+    </form>
+    
+    <script src="index.js"></script>
+</body>
+</html>
