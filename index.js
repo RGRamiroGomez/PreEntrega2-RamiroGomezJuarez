@@ -7,11 +7,11 @@ const tarifas=[
     {id:5,coef:3,entrega:1200,dire:4400},
     {id:3,coef:1.5,entrega:500,dire:3300}
 ]
-indice=430;
+let indice=430;
 const envios=[]
 class Envio{
     id;
-    precio;
+    tarifa;
     destino;
     bulto;
     domicilio;
@@ -20,31 +20,37 @@ class Envio{
         this.id=puntero
         puntero=puntero+1
     }
+    buscarTarifa(tar){
+        tarifas.forEach((tarifa)=>{
+            if(tarifa.dire==tar){
+                this.tarifa=tarifa.id
+            }
+            this.hablar()
+        })
+    }
+    hablar(){
+        console.log(this.tarifa)
+    }
 }
-envioAct=new Envio()
+let envioAct=new Envio()
 
 // let dest=document.getElementById("destino")
 // let bul=document.getElementById("bulto")
 // let ent=document.getElementById("entrega")
 // let dom=document.getElementById("destinatario")
 let next=document.getElementsByClassName("next")
-console.log(next)
 let prev=document.getElementsByClassName("prev")
 let submmit=document.getElementById(submit)
 
 function nextStep(){
     let act=document.getElementsByClassName("active")[0]
     let sig=act.nextElementSibling
-    console.log(act)
-    console.log(sig)
     act.classList.remove("active")
     sig.classList.add("active")
 }
 function prevStep(){
     let act=document.getElementsByClassName("active")[0]
     let pre=act.previousElementSibling
-    console.log(act)
-    console.log(pre)
     act.classList.remove("active")
     pre.classList.add("active")
 }
@@ -55,8 +61,10 @@ sig.addEventListener("click",nextStep)
 for(ant of prev){
 ant.addEventListener("click",prevStep)
 }
-let dtar=getElementById("destinos")
-dtar.addEventListener("onblur",)
-function dataTarifa(dtar.value){
-        tarifas.forEach()
-}
+
+let dest=document.getElementById("valord")
+let valord=dest.options[dest.selectedIndex].value
+dest.addEventListener('change',function(){envioAct.buscarTarifa(valord)})
+//des.addEventListener("change",envioAct.buscarTarifa(dtar))
+
+
