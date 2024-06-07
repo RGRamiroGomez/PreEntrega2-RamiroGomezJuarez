@@ -50,7 +50,6 @@ submitButton.addEventListener("click",async()=>{
     let pre= await envioAct.calculoTotal()
     mostrarPrecio(pre)
     guardar(envioAct)
-    guardarEnvio(envioAct)
 })
 
 

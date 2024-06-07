@@ -1,3 +1,4 @@
+
 function mostrarPrecio(precio) {
     const precioElement = document.createElement("span");
     precioElement.className = "";
@@ -12,9 +13,13 @@ function mostrarPrecio(precio) {
 
 function guardar(act){
     let envio=JSON.stringify(act)
-    let segui = uuidv4() + act.id;
+    let segui = 'envio' + act.id;
     localStorage.setItem(segui,envio)
     localStorage.setItem('nseg',segui)
+    Swal.fire({
+        title:'Envio cargado',
+        text:'Numero de envio : '+act.id 
+    })
 }
 
 function cargar() {
@@ -78,22 +83,3 @@ async function cargaDest(padre){
     }
 }
 
-async function guardarEnvio(envio){
-    try{    
-        const res=await fetch("./db/envios.json",{
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(envio)
-          })
-        Swal.fire({
-            title:'Envio cargado',
-            text:'Numero de seguimiento: ' + envio.id
-        })
-    }catch(err){
-        Swal.fire({
-            title:'No pudimos guardar el envio'
-        })
-    }
-}
