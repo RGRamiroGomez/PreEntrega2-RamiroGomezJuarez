@@ -1,0 +1,8 @@
+
+[
+    { "id": 1, "coef": 2.3, "entrega": 1000, "dire": 5500 },
+    { "id": 2, "coef": 1, "entrega": 0, "dire": 1100 },
+    { "id": 4, "coef": 2, "entrega": 800, "dire": 2200 },
+    { "id": 5, "coef": 3, "entrega": 1200, "dire": 4400 },
+    { "id": 3, "coef": 1.5, "entrega": 500, "dire": 3300 }
+]
